@@ -39,7 +39,8 @@ export default function ContactPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Get in <span className="gradient-text">Touch</span>
+              <span className="text-black md:text-gray-900">Get in</span>{' '}
+              <span className="gradient-text">Touch</span>
             </h1>
             <p className="text-xl text-gray-700 leading-relaxed">
               Connect with us to learn more about our work, volunteer opportunities, partnership programs, 
