@@ -92,6 +92,7 @@ export default function ProgramsPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              
               <span className="text-black md:text-gray-900">Our</span>{' '}
               <span className="gradient-text">Programs</span>
             </h1>
