@@ -92,7 +92,8 @@ export default function ProgramsPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Our <span className="gradient-text">Programs</span>
+              <span className="text-black md:text-gray-900">Our</span>{' '}
+              <span className="gradient-text">Programs</span>
             </h1>
             <p className="text-xl text-gray-700 leading-relaxed">
               Transformative initiatives designed to empower communities and create
