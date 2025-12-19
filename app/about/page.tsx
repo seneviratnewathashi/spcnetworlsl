@@ -23,7 +23,8 @@ export default function AboutPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              About <span className="gradient-text">SPC Network</span>
+              <span className="text-black md:text-gray-900">About</span> {' '}
+              <span className="gradient-text">SPC Network</span>
             </h1>
             <p className="text-xl text-gray-700 leading-relaxed">
               A community-based, non-profit network dedicated to advancing environmental protection, 
@@ -78,7 +79,8 @@ export default function AboutPage() {
             viewport={{ once: false }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4">Our Team</h2>
+            <h2 className="text-black md:text-gray-900">Our Team</h2>
+            {/* <span className="text-black md:text-gray-900">Our</span> {' '} */}
             <p className="text-xl text-gray-600">
               A diverse group of dedicated professionals and volunteers
             </p>
