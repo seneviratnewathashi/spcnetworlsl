@@ -79,8 +79,8 @@ export default function AboutPage() {
             viewport={{ once: false }}
             className="text-center mb-12"
           >
-            <h2 className="text-black md:text-gray-900">Our Team</h2>
-            {/* <span className="text-black md:text-gray-900">Our</span> {' '} */}
+            <h2 className="text-black-4xl font-bold mb-4">Our Team</h2>
+            {/* className="text-black md:text-gray-900">Our</span> {' '} */}
             <p className="text-xl text-gray-600">
               A diverse group of dedicated professionals and volunteers
             </p>

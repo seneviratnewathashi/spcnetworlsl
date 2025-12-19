@@ -27,7 +27,8 @@ export default function About() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                About <span className="gradient-text">SPC Network</span>
+                <span className="text-black md:text-gray-900">About</span> {' '}
+                <span className="gradient-text">SPC Network</span>
               </h2>
               
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">

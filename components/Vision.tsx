@@ -21,7 +21,8 @@ export default function Vision() {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Our <span className="gradient-text">Vision</span>
+              <span className="text-black md:text-gray-900">Our</span> {' '}
+              <span className="gradient-text">Vision</span>
             </h2>
             
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
