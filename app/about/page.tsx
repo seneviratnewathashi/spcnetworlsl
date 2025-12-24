@@ -5,10 +5,10 @@ import { Users, Target, Award, Globe } from 'lucide-react'
 
 export default function AboutPage() {
   const team = [
-    { name: 'Leadership Team', count: '15+', icon: Users },
-    { name: 'Core Members', count: '100+', icon: Target },
-    { name: 'Volunteers', count: '500+', icon: Award },
-    { name: 'Partners', count: '50+', icon: Globe },
+    { name: 'Leadership Team', count: '3+', icon: Users },
+    { name: 'Core Members', count: '4+', icon: Target },
+    { name: 'Volunteers', count: '100+', icon: Award },
+    { name: 'Partners', count: '12+', icon: Globe },
   ]
 
   return (

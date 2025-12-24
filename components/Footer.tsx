@@ -55,6 +55,18 @@ export default function Footer() {
               social justice, and sustainable development initiatives.
             </p>
             
+            {/* Contact Details */}
+            <div className="mb-6 space-y-2">
+              <div className="flex items-center gap-2 text-gray-400 text-sm">
+                <Phone size={16} />
+                <span>076 6463454 (Treasurer)</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-400 text-sm">
+                <Phone size={16} />
+                <span>0726588328 (Secretary)</span>
+              </div>
+            </div>
+            
             {/* Newsletter */}
             <div className="mb-6">
               <h4 className="text-sm font-semibold mb-3 text-white">Stay Connected</h4>

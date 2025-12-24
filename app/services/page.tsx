@@ -141,6 +141,209 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Leadership & Team Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-50/30 via-white to-secondary-50/30"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-100/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-100/20 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-black md:text-gray-900">Our</span>{' '}
+              <span className="gradient-text">Leadership</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Guided by experienced leaders and strategic advisors committed to driving sustainable 
+              environmental conservation and community development across Sri Lanka.
+            </p>
+          </motion.div>
+
+          {/* Executive Leadership */}
+          <div className="max-w-6xl mx-auto mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6 }}
+              className="mb-12"
+            >
+              <div className="flex items-center justify-center gap-3 mb-10">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary-500"></div>
+                <h3 className="text-3xl font-bold text-gray-900 tracking-tight">Executive Leadership</h3>
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-secondary-500"></div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  className="group bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:border-primary-200 transition-all duration-300"
+                >
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+                      <span className="text-white text-3xl font-bold">KM</span>
+                    </div>
+                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full">
+                      <span className="text-white text-xs font-semibold uppercase tracking-wider">Chairman</span>
+                    </div>
+                  </div>
+                  <div className="text-center mt-8">
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">Mr. K. Munagama</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Strategic oversight and organizational governance
+                    </p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="group bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:border-blue-200 transition-all duration-300"
+                >
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+                      <span className="text-white text-3xl font-bold">AC</span>
+                    </div>
+                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full">
+                      <span className="text-white text-xs font-semibold uppercase tracking-wider">Treasurer</span>
+                    </div>
+                  </div>
+                  <div className="text-center mt-8">
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">Mr. P.M. Asoka Chandrakantha</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Financial management and resource allocation
+                    </p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="group bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:border-pink-200 transition-all duration-300"
+                >
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+                      <span className="text-white text-3xl font-bold">GP</span>
+                    </div>
+                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-pink-600 to-rose-600 rounded-full">
+                      <span className="text-white text-xs font-semibold uppercase tracking-wider">Secretary</span>
+                    </div>
+                  </div>
+                  <div className="text-center mt-8">
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">Miss. Gethmi Pandithasekara</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Administrative coordination and communications
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Advisory Committee */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="flex items-center justify-center gap-3 mb-10">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary-500"></div>
+                <h3 className="text-3xl font-bold text-gray-900 tracking-tight">Advisory Committee</h3>
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-secondary-500"></div>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="group bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:border-purple-200 transition-all duration-300"
+                >
+                  <div className="flex flex-col items-center">
+                    <div className="w-20 h-20 mb-4 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white text-2xl font-bold">SK</span>
+                    </div>
+                    <h4 className="text-lg font-bold text-gray-900 text-center mb-1">Mr. Suranjan Kodituwakku</h4>
+                    <div className="inline-block px-3 py-1 bg-gray-100 rounded-full mt-2">
+                      <span className="text-gray-600 text-xs font-medium uppercase tracking-wide">Strategic Advisor</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="group bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:border-green-200 transition-all duration-300"
+                >
+                  <div className="flex flex-col items-center">
+                    <div className="w-20 h-20 mb-4 rounded-full bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white text-2xl font-bold">R</span>
+                    </div>
+                    <h4 className="text-lg font-bold text-gray-900 text-center mb-1">Mr. Richard Seneviratne</h4>
+                    <div className="inline-block px-3 py-1 bg-gray-100 rounded-full mt-2">
+                      <span className="text-gray-600 text-xs font-medium uppercase tracking-wide">Strategic Advisor</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="group bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:border-orange-200 transition-all duration-300"
+                >
+                  <div className="flex flex-col items-center">
+                    <div className="w-20 h-20 mb-4 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white text-2xl font-bold">LR</span>
+                    </div>
+                    <h4 className="text-lg font-bold text-gray-900 text-center mb-1">Mr. Lalith Ranaraja</h4>
+                    <div className="inline-block px-3 py-1 bg-gray-100 rounded-full mt-2">
+                      <span className="text-gray-600 text-xs font-medium uppercase tracking-wide">Strategic Advisor</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="group bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:border-yellow-200 transition-all duration-300"
+                >
+                  <div className="flex flex-col items-center">
+                    <div className="w-20 h-20 mb-4 rounded-full bg-gradient-to-br from-yellow-500 to-amber-500 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white text-2xl font-bold">TA</span>
+                    </div>
+                    <h4 className="text-lg font-bold text-gray-900 text-center mb-1">Mr. Tyron Dallas Amath</h4>
+                    <div className="inline-block px-3 py-1 bg-gray-100 rounded-full mt-2">
+                      <span className="text-gray-600 text-xs font-medium uppercase tracking-wide">Strategic Advisor</span>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

@@ -19,13 +19,13 @@ export default function Stats() {
     },
     { 
       label: 'Years of Impact', 
-      value: 20, 
+      value: 22, 
       suffix: '+',
       description: 'Serving communities in Sri Lanka'
     },
     { 
       label: 'Active Programs', 
-      value: 10, 
+      value: 5, 
       suffix: '+',
       description: 'Ongoing conservation and development initiatives'
     },

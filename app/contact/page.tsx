@@ -84,7 +84,10 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567<br />Mon-Fri 9am-5pm</p>
+                    <p className="text-gray-600">
+                      076 6463454 (Treasurer)<br />
+                      0726588328 (Secretary)
+                    </p>
                   </div>
                 </div>
 
@@ -94,15 +97,26 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">info@spcnetwork.org<br />support@spcnetwork.org</p>
+                    <p className="text-gray-600">sustainablepcnetwork@gmail.com<br /></p>
                   </div>
                 </div>
+
+              <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
+                    <p className="text-gray-600">All districts at service<br /></p>
+                  </div>
+                </div>
+
               </div>
 
               {/* Map Placeholder */}
-              <div className="mt-8 bg-gray-200 rounded-2xl h-64 flex items-center justify-center">
+              {/* <div className="mt-8 bg-gray-200 rounded-2xl h-64 flex items-center justify-center">
                 <p className="text-gray-500">Map Location</p>
-              </div>
+              </div> */}
             </motion.div>
 
             {/* Contact Form */}
