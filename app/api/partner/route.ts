@@ -4,10 +4,22 @@ import { Resend } from 'resend'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { fullName, email, phone, location, availability, interests, experience, motivation } = body
+    const { 
+      organizationName, 
+      contactPerson, 
+      email, 
+      phone, 
+      website, 
+      organizationType, 
+      partnershipType, 
+      areasOfInterest, 
+      description, 
+      expectedOutcome 
+    } = body
 
     // Validate required fields
-    if (!fullName || !email || !phone || !location || !availability || !interests || !motivation) {
+    if (!organizationName || !contactPerson || !email || !phone || !organizationType || 
+        !partnershipType || !areasOfInterest || !description || !expectedOutcome) {
       return NextResponse.json(
         { 
           success: false, 
@@ -45,37 +57,38 @@ export async function POST(request: Request) {
       )
     }
 
-    
     // Send email using Resend
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #10b981;">New Volunteer Application</h2>
+        <h2 style="color: #f59e0b;">New Partnership Proposal</h2>
         
-        <h3 style="color: #333; border-bottom: 2px solid #10b981; padding-bottom: 8px;">Personal Information</h3>
-        <p><strong>Full Name:</strong> ${fullName}</p>
+        <h3 style="color: #333; border-bottom: 2px solid #f59e0b; padding-bottom: 8px;">Organization Information</h3>
+        <p><strong>Organization Name:</strong> ${organizationName}</p>
+        <p><strong>Contact Person:</strong> ${contactPerson}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Location:</strong> ${location}</p>
+        <p><strong>Website:</strong> ${website || 'Not provided'}</p>
+        <p><strong>Organization Type:</strong> ${organizationType}</p>
         
-        <h3 style="color: #333; border-bottom: 2px solid #10b981; padding-bottom: 8px; margin-top: 24px;">Volunteer Details</h3>
-        <p><strong>Availability:</strong> ${availability}</p>
-        <p><strong>Areas of Interest:</strong> ${interests}</p>
+        <h3 style="color: #333; border-bottom: 2px solid #f59e0b; padding-bottom: 8px; margin-top: 24px;">Partnership Details</h3>
+        <p><strong>Partnership Type:</strong> ${partnershipType}</p>
+        <p><strong>Areas of Interest:</strong> ${areasOfInterest}</p>
         
-        <h3 style="color: #333; border-bottom: 2px solid #10b981; padding-bottom: 8px; margin-top: 24px;">Experience</h3>
-        <p style="white-space: pre-wrap;">${experience || 'Not provided'}</p>
+        <h3 style="color: #333; border-bottom: 2px solid #f59e0b; padding-bottom: 8px; margin-top: 24px;">Organization Description</h3>
+        <p style="white-space: pre-wrap;">${description}</p>
         
-        <h3 style="color: #333; border-bottom: 2px solid #10b981; padding-bottom: 8px; margin-top: 24px;">Motivation</h3>
-        <p style="white-space: pre-wrap;">${motivation}</p>
+        <h3 style="color: #333; border-bottom: 2px solid #f59e0b; padding-bottom: 8px; margin-top: 24px;">Expected Outcomes</h3>
+        <p style="white-space: pre-wrap;">${expectedOutcome}</p>
         
         <hr style="margin: 32px 0; border: none; border-top: 1px solid #e5e7eb;">
-        <p style="color: #6b7280; font-size: 14px;">This application was submitted through the SPC Network website.</p>
+        <p style="color: #6b7280; font-size: 14px;">This partnership proposal was submitted through the SPC Network website.</p>
       </div>
     `
 
     const { data, error: resendError } = await resend.emails.send({
       from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
       to: emailTo,
-      subject: `New Volunteer Application - ${fullName}`,
+      subject: `New Partnership Proposal - ${organizationName}`,
       html: emailHtml,
       replyTo: email,
     })
@@ -97,12 +110,12 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { 
         success: true, 
-        message: 'Your volunteer application has been submitted successfully! We will contact you soon.' 
+        message: 'Your partnership proposal has been submitted successfully! We will review it and contact you soon.' 
       },
       { status: 200 }
     )
   } catch (error) {
-    console.error('Error processing volunteer application:', error)
+    console.error('Error processing partnership proposal:', error)
     
     // Provide more detailed error message in development
     const errorMessage = error instanceof Error ? error.message : 'Unknown error'
@@ -111,10 +124,9 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { 
         success: false, 
-        message: 'There was an error submitting your application. Please try again later or contact us directly.' 
+        message: 'There was an error submitting your proposal. Please try again later or contact us directly.' 
       },
       { status: 500 }
     )
   }
-} 
-
+}

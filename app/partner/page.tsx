@@ -17,12 +17,48 @@ export default function PartnerPage() {
     description: '',
     expectedOutcome: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Partnership Form Submitted:', formData)
-    // Handle form submission here
-    alert('Thank you for your interest in partnering with us! We will contact you soon.')
+    setIsSubmitting(true)
+    setSubmitMessage('')
+    
+    try {
+      const response = await fetch('/api/partner', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitMessage(data.message)
+        // Reset form
+        setFormData({
+          organizationName: '',
+          contactPerson: '',
+          email: '',
+          phone: '',
+          website: '',
+          organizationType: '',
+          partnershipType: '',
+          areasOfInterest: '',
+          description: '',
+          expectedOutcome: ''
+        })
+      } else {
+        setSubmitMessage(data.message || 'An error occurred. Please try again.')
+      }
+    } catch (error) {
+      setSubmitMessage('Failed to submit proposal. Please try again later.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -258,14 +294,30 @@ export default function PartnerPage() {
                 </div>
               </div>
 
+              {/* Submit Message */}
+              {submitMessage && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-4 rounded-lg ${
+                    submitMessage.includes('successfully') 
+                      ? 'bg-green-50 text-green-800 border border-green-200' 
+                      : 'bg-red-50 text-red-800 border border-red-200'
+                  }`}
+                >
+                  {submitMessage}
+                </motion.div>
+              )}
+
               {/* Submit Button */}
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full bg-gradient-to-r from-secondary-600 to-secondary-700 text-white py-4 px-8 rounded-lg font-bold text-lg hover:shadow-xl transition-all duration-300"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-secondary-600 to-secondary-700 text-white py-4 px-8 rounded-lg font-bold text-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Submit Partnership Proposal
+                {isSubmitting ? 'Submitting...' : 'Submit Partnership Proposal'}
               </motion.button>
             </form>
           </motion.div>

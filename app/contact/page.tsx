@@ -11,13 +11,37 @@ export default function ContactPage() {
     subject: '',
     message: '',
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! We will get back to you soon.')
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    setIsSubmitting(true)
+    setSubmitMessage('')
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitMessage(data.message)
+        // Reset form
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      } else {
+        setSubmitMessage(data.message || 'An error occurred. Please try again.')
+      }
+    } catch (error) {
+      setSubmitMessage('Failed to send message. Please try again later.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -194,11 +218,27 @@ export default function ContactPage() {
                     ></textarea>
                   </div>
 
+                  {/* Submit Message */}
+                  {submitMessage && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className={`p-4 rounded-lg ${
+                        submitMessage.includes('successfully') 
+                          ? 'bg-green-50 text-green-800 border border-green-200' 
+                          : 'bg-red-50 text-red-800 border border-red-200'
+                      }`}
+                    >
+                      {submitMessage}
+                    </motion.div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                     <Send className="w-5 h-5" />
                   </button>
                 </div>
