@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { Users, Mail, Phone, MapPin, Calendar, Heart } from 'lucide-react'
+import { Users, Mail, Phone, MapPin, Calendar, Heart, ArrowLeft } from 'lucide-react'
+import Link from 'next/link'
 
 export default function VolunteerPage() {
   const [formData, setFormData] = useState({
@@ -252,8 +253,19 @@ export default function VolunteerPage() {
 
               {/* Submit Button */}
               {submitMessage && (
-                <div className={`p-4 rounded-lg ${submitMessage.includes('success') ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
-                  {submitMessage}
+                <div className="space-y-3">
+                  <div className={`p-4 rounded-lg ${submitMessage.includes('success') ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
+                    {submitMessage}
+                  </div>
+                  {submitMessage.includes('success') && (
+                    <Link
+                      href="/"
+                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+                    >
+                      <ArrowLeft className="w-4 h-4" />
+                      Back to Home
+                    </Link>
+                  )}
                 </div>
               )}
 
