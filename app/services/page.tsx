@@ -266,7 +266,7 @@ export default function ServicesPage() {
                 <div className="h-px w-12 bg-gradient-to-l from-transparent to-secondary-500"></div>
               </div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -285,23 +285,8 @@ export default function ServicesPage() {
                   </div>
                 </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="group bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:border-green-200 transition-all duration-300"
-                >
-                  <div className="flex flex-col items-center">
-                    <div className="w-20 h-20 mb-4 rounded-full bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white text-2xl font-bold">R</span>
-                    </div>
-                    <h4 className="text-lg font-bold text-gray-900 text-center mb-1">Mr. Richard Seneviratne</h4>
-                    <div className="inline-block px-3 py-1 bg-gray-100 rounded-full mt-2">
-                      <span className="text-gray-600 text-xs font-medium uppercase tracking-wide">Strategic Advisor</span>
-                    </div>
-                  </div>
-                </motion.div>
+                
+             
 
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
